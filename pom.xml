@@ -17,8 +17,17 @@
     <properties>
         <java.version>11</java.version>
     </properties>
-
+    <!--
+    scope 종류
+    compile: 컴파일 시점 필요, 배포시 에도 포함.
+    provided: 컴파일 시점 에만 사용.
+    runtime: runtime 시점에 사용.
+    -->
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

@@ -8,15 +8,23 @@ import org.springframework.web.bind.annotation.*;
 public class TestController {
 
     @RequestMapping("/")
-    public String index(Model model) {
-        model.addAttribute("msg", "input your id");
+    public String index() {
         return "index";
     }
 
-    @RequestMapping(value="/", method=RequestMethod.POST)
-    public String send(@RequestParam("id1") String id, Model model){
-        model.addAttribute("msg", "Hi. " + id + "!!");
-        model.addAttribute("id2", id);
-        return "index";
+    @RequestMapping(value="/redi")
+    public String other(){
+        return "redirect:/";
     }
+
+    @RequestMapping(value="/forw")
+    public String home(){
+        return "forward:/";
+    }
+
 }
+
+/*
+* redirect: response, request 정보를 새로 생성.
+* forward: response, request 정보를 유지.
+* */
